@@ -5,9 +5,12 @@
   <meta charset="utf-8">
 
   <title>API Homework</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+	<body background="assets/spiration-light.png">
 
 
 	<div id="animal-buttons">
@@ -68,6 +71,7 @@
 	    	var results = response.data;
 
 	    		//response is the object that contains the array
+                $("#animals").empty()
 
 	    		for (var i = 0; i < response.data.length; i++) {
 
@@ -83,44 +87,30 @@
 		            // Setting the src attribute of the image to a property pulled off the result item
 		            $(animalImage).attr("src", results[i].images.fixed_height.url);
 
-	
+		            $(animalImage).attr("data-still", results[i].images.fixed_height_still.url);	
 
+		           	$(animalImage).attr("data-animate", results[i].images.fixed_height.url);
+
+		            $(animalImage).attr("data-state", "still");
+		   
 		            // Appending the paragraph and image tag to the animals div
 
-		            
-					$("#animals").html(p);
-		            $("#animals").html(animalImage);
-
-		           	$("#animals").append(p);
+                    //BW: Remember: .html will empty the entire html contents of your element and set it to the value you give it. Do you want that to happen here?
+					
+                    
+		            $("#animals").append(p);
 		            $("#animals").append(animalImage);
-		            // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
+
+
+		            //BW: I can't find where you define the variable "animals" (js will default to your div with that id), 
+                    //and more importantly, I can't find an element with id gifs-appear-here in your html
+                    //It's very likely that this line is doing nothing, so you can change or remove it
 		            $("#gifs-appear-here").prepend(animals);
 
 
 				};
-
-
-
-
 			});
-
-
-
-            // // Creating a paragraph tag with the result item's rating
-            // var p = $("<p>").text("Rating: " + results[i].rating);
-
-	    			//create a container div
-	    			//create a paragraph for rating
-	    			//append the paragraph to the container
-	    			//create an image tag
-	    			//append it to the container
-
-	    			//response.data[i].rating
-	    			//response.data[i].images.fixed_height.url - go get thihs from the console and pick up the image source https://media0.giphy.com/media/rdma0nDFZMR32/200.gif and store it in img src attribute
-
-	    
-
-	    	});
+        });
 	    
 
 		$("#add-animal").on("click", function(event) {

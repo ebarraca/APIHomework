@@ -1,0 +1,45 @@
+
+}
+#animal-buttons{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	color: blue;
+	width: 100px;
+	background-color: red;
+
+}
+
+.animal {
+	color: pink;
+	background-color: black;
+	margin-right: 10px;
+	width: 100px;
+	height: 40px;
+	font-size: 20px;
+	margin-top: 30px;
+	margin-left: 50px;
+	margin-bottom: 20px;
+}
+
+label {
+margin-top: 30px;
+font-size:24px;
+margin-left: 50px;
+}
+
+#add-animal{
+	margin-top: 20px;
+	margin-left: 50px;
+	font-size: 20px;
+	color: black;
+	background-color: pink;
+	padding: 10px;
+
+
+}
+
+
+#animals {
+	margin-left: 50px;
+	column-count: 4;
+}

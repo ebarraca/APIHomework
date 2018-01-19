@@ -7,20 +7,24 @@
   <title>API Homework</title>
 
   <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
 
 <body>
 	<body background="assets/spiration-light.png">
+
+	<div id="intro-text">Click a button or add an animal to load 10 gifs! 
+	</div>
 
 
 	<div id="animal-buttons">
 	</div>
 
 	<form id="animal-form">
-		<label for="animal-input">Add an Animal</label>
+		<label for="animal-input">Add an animal</label>
 		<input type="text" id="animal-input"><br>
 
-		<input id="add-animal" type="submit" value="Submit">
+		<input id="add-animal" type="submit" value="SUBMIT">
 	</form>
 	
 	<div id="animals">
@@ -31,7 +35,7 @@
 
 	    // Here we are building the URL we need to query the database
 
-	   	var topics = ["cat", "dog", "pigeon", "pig", "chicken"];
+	   	var topics = ["CAT", "DOG", "PIGEON", "PIG", "CHICKEN"];
 
 	    function renderButtons() {
 
@@ -42,9 +46,9 @@
 		   	  var a = $("<button>");
 	          // Adding a class
 	          a.addClass("animal");
-	          // Adding a data-attribute with a value of the movie at index i
+	          // Adding a data-attribute with a value of the animal at index i
 	          a.attr("data-name", topics[i]);
-	          // Providing the button's text with a value of the movie at index i
+	          // Providing the button's text with a value of the animal at index i
 	          a.text(topics[i]);
 	          // Adding the button to the HTML
 	          $("#animal-buttons").append(a);
@@ -75,8 +79,8 @@
 
 	    		for (var i = 0; i < response.data.length; i++) {
 
-			    	// Creating and storing a div tag
-		            var animalDiv = $("<div class='col-md-4'>");
+			    	// Creating and storing a div tag; 
+		            var animalDiv = $("<div>");
 					
 					$(animalDiv).text(JSON.stringify(response));
 		            // Creating a paragraph tag with the result item's rating
@@ -92,20 +96,15 @@
 		           	$(animalImage).attr("data-animate", results[i].images.fixed_height.url);
 
 		            $(animalImage).attr("data-state", "still");
-		   
-		            // Appending the paragraph and image tag to the animals div
 
-                    //BW: Remember: .html will empty the entire html contents of your element and set it to the value you give it. Do you want that to happen here?
+
+		            // Appending the paragraph and image tag to the animals div
 					
-                    
 		            $("#animals").append(p);
 		            $("#animals").append(animalImage);
+		            $(p).append ($(animalImage));
 
-
-		            //BW: I can't find where you define the variable "animals" (js will default to your div with that id), 
-                    //and more importantly, I can't find an element with id gifs-appear-here in your html
-                    //It's very likely that this line is doing nothing, so you can change or remove it
-		            $("#gifs-appear-here").prepend(animals);
+		            // $("#gifs-appear-here").prepend(animals);
 
 
 				};
@@ -119,15 +118,15 @@
 			event.preventDefault();
 
 			// This line will grab the text from the input box
-			var animal = $("#animal-input").val().trim();
-			// The movie from the textbox is then added to our array
+			var animal = $("#animal-input").val().toUpperCase();
+			// The animal from the textbox is then added to our array
 			topics.push(animal);
 
-			// calling renderButtons which handles the processing of our movie array
+			// calling renderButtons which handles the processing of our animal array
 			renderButtons();
 		});
 
-		// Calling the renderButtons function at least once to display the initial list of movies
+		// Calling the renderButtons function at least once to display the initial list of animals
 		renderButtons();
 
 

@@ -12,12 +12,15 @@
 	color: pink;
 	background-color: black;
 	margin-right: 10px;
-	width: 120px;
+	width: 130px;
 	height: 40px;
-	font-size: 20px;
+	font-size: 18px;
 	margin-top: 30px;
-	margin-left: 50px;
-	margin-bottom: 20px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	font-family: 'Montserrat', sans-serif;
+
+
 }
 
 label {
@@ -30,20 +33,26 @@ label {
 	margin-left: 20px;
 	width: 200px;
 	height: 20px;
-	font-size: 20px;
 	padding: 5px;
+	margin-top: 10px;
+}
+
+#animal-form {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
 }
 
 #add-animal{
 	margin-top: 20px;
 	margin-left: 50px;
-	font-size: 20px;
+	margin-bottom: 30px;
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
 	color: black;
 	background-color: pink;
 	padding: 10px;
 	width: 120px;
-
-
 }
 
 
@@ -52,3 +61,29 @@ label {
 	column-count: 4;
 	column-width: 20px;
 }
+
+p {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color:black;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+img { 
+	width: 80%;
+	text-align: left;
+	margin-top: 10px;
+	border: 1px grey solid;
+}
+
+#intro-text {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color:black;
+	margin-left: 50px;
+	font-size: 25px;
+	margin-top: 40px;
+
+}
+

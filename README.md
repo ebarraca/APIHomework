@@ -7,3 +7,5 @@ Then, When you click on a button, 10 images are retrieved from giphy API and dis
 When you click on the image, the gif plays. When you click again, the gif stops playing.
 
 The rating of each gif will also appear on the page.
+
+You can find the site here: https://ebarraca.github.io/APIHomework/
